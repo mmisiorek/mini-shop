@@ -4,7 +4,11 @@ Mini shop
 Installation
 -------------
 
-First please build the container with the command:
+First please execute command:
+
+    bash docker_prepare.sh
+
+This will create the parameters.yml file if it is needed. Now build the container with the command:
 
     docker-compose build app
     

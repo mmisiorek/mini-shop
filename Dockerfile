@@ -15,7 +15,6 @@ RUN addgroup -g 1000 app \
 RUN mkdir /home/app/code
 COPY . /home/app/code
 RUN rm -rf /home/app/code/vendor /home/app/code/node_modules composer.lock
-RUN cp /home/app/code/app/config/parameters_docker.yml.dist /home/app/code/app/config/parameters.yml
 RUN chown -R app:app /home/app/code
 
 USER app

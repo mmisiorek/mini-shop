@@ -1,8 +1,8 @@
 <?php
 
-namespace AppBundle\Location;
+namespace AppBundle\Financial;
 
-interface LocationContextInterface
+interface FinancialContextInterface
 {
     /**
      * @return string

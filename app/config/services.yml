@@ -34,17 +34,17 @@ services:
     #     arguments:
     #         $someArgument: 'some_value'
 
-    AppBundle\Location\LocationContext:
-        arguments: ["@request_stack", "%default_currency%"]
-        public: true
+    AppBundle\Financial\FinancialContext:
         autowire: false
+        public: true
+        arguments: [ "%locale%" ]
 
     AppBundle\Repository\ProductRepository:
         factory: "Doctrine\\ORM\\EntityManagerInterface:getRepository"
         arguments: [ "AppBundle\\Entity\\Product" ]
         public: true
         calls:
-            - [setPaginator, ["@knp_paginator"]]
+            - [ setPaginator, ["@knp_paginator"] ]
 
     AppBundle\Creator\SwiftMessageCreator:
         autowire: false

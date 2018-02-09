@@ -15,7 +15,6 @@ services:
       - ./:/home/app/code
       - /home/app/code/vendor
       - /home/app/code/node_modules
-      - /home/app/code/app/config
 
   database:
     image: mysql:5.7

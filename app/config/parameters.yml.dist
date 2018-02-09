@@ -19,5 +19,4 @@ parameters:
     secret: ThisTokenIsNotSoSecretChangeIt
 
     # default currency used by LocationContext when it cannot determine a real location
-    default_currency: EUR
     default_email_sender: example@example.com

@@ -3,8 +3,9 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Product;
+use AppBundle\Financial\FinancialContext;
 use AppBundle\Form\Type\ProductType;
-use AppBundle\Location\LocationContext;
+use AppBundle\Financial\FinancialContextInterface;
 use AppBundle\Creator\SwiftMessageCreator;
 use AppBundle\Creator\SwiftMessageCreatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -23,11 +24,11 @@ class AdminController extends Controller
      */
     public function newProductAction(Request $request)
     {
-        $locationContext = $this->container->get(LocationContext::class);
+        $financialContext = $this->container->get(FinancialContext::class);
 
         $product = new Product();
         $form = $this->createForm(ProductType::class, $product, [
-            'locationContext' => $locationContext
+            'financialContext' => $financialContext
         ]);
 
         $form->handleRequest($request);

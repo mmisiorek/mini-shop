@@ -1,0 +1,31 @@
+version: '2'
+
+services:
+  app:
+    build: ./
+    tty: true
+    volumes:
+      - ./:/home/app/code
+      - /home/app/code/vendor
+    ports:
+      - "8000:8000"
+    depends_on:
+      - database
+    volumes:
+      - ./:/home/app/code
+      - /home/app/code/vendor
+      - /home/app/code/node_modules
+
+  database:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: minishop
+      MYSQL_USER: minishop
+      MYSQL_PASSWORD: m1n1shop
+      MYSQL_ROOT_PASSWORD: m1n1shop
+    ports:
+      - "33066:3306"
+    volumes:
+      - /var/lib/mysql
+

@@ -1,0 +1,17 @@
+{
+  "name": "mini-shop",
+  "description": "Front-end dependencies for Mini Shop project",
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "font-awesome": "^4.7.0"
+  },
+  "devDependencies": {
+    "@symfony/webpack-encore": "^0.17.1",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "webpack-notifier": "^1.5.1"
+  },
+  "scripts": {
+    "build": "node node_modules/.bin/encore production"
+  }
+}

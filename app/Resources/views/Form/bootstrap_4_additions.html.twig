@@ -1,0 +1,26 @@
+{% block form_group_class %}
+    {% if form.vars.postfix is defined %}
+        col-8
+    {% else %}
+        col-sm-10 col-12
+    {% endif %}
+{% endblock %}
+
+{% block form_row -%}
+    {%- if expanded is defined and expanded -%}
+        {{ block('fieldset_form_row') }}
+    {%- else -%}
+        <div class="form-group row{% if (not compound or force_error|default(false)) and not valid %} is-invalid{% endif %}">
+            {{- form_label(form) -}}
+            <div class="{{ block('form_group_class') }}">
+                {{- form_widget(form) -}}
+                {{- form_errors(form) -}}
+            </div>
+            {% if form.vars.postfix is defined %}
+                <div class="col-4 col-sm-2 postfix">
+                    <div>{{ form.vars.postfix }}</div>
+                </div>
+            {% endif %}
+        </div>
+    {%- endif -%}
+{%- endblock form_row %}

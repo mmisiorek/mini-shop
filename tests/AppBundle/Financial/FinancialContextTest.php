@@ -5,7 +5,7 @@ namespace Tests\AppBundle\Financial;
 use AppBundle\Financial\FinancialContext;
 use PHPUnit\Framework\TestCase;
 
-class FinancialContetTest extends TestCase
+class FinancialContextTest extends TestCase
 {
     /**
      * @dataProvider currencySymbolProvider
